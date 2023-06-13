@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.moviedatabase.model.MovieItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_14">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardMovieImage"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_150"
+            app:cardCornerRadius="@dimen/dp_6"
+            app:cardElevation="@dimen/dp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageMovie"
+                imageUrl="@{item.imageLink}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{item.title}"
+            android:textAlignment="center"
+            android:textColor="@color/color_text_content"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cardMovieImage"
+            app:layout_constraintStart_toStartOf="@id/cardMovieImage"
+            app:layout_constraintTop_toBottomOf="@id/cardMovieImage"
+            tools:text="Justice League" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

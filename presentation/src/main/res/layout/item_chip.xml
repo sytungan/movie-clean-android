@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_42"
+    android:backgroundTint="@color/color_bg_button"
+    android:fontFamily="@font/helvetica"
+    android:textColor="@color/white"
+    android:textSize="@dimen/sp_12"
+    app:chipCornerRadius="@dimen/dp_12"
+    tools:text="Chip text" />

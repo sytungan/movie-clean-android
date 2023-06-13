@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.moviedatabase.ui.home.HomeViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/layoutToolbar"
+                layout="@layout/layout_toolbar_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutToolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dp_16">
+
+                    <include
+                        android:id="@+id/titleRecommendation"
+                        layout="@layout/layout_title_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        android:visibility="@{viewModel.movieId ==-1 ? View.GONE :View.VISIBLE}"
+                        app:title="@{@string/recommendations}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerRecommendation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_16"
+                        android:visibility="@{viewModel.movieId ==-1 ? View.GONE :View.VISIBLE}"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleRecommendation" />
+
+                    <include
+                        android:id="@+id/titleCategory"
+                        layout="@layout/layout_title_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerRecommendation"
+                        app:title="@{@string/category}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleCategory" />
+
+                    <include
+                        android:id="@+id/titlePopular"
+                        layout="@layout/layout_title_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerCategory"
+                        app:title="@{@string/popular}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerPopular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titlePopular" />
+
+                    <include
+                        android:id="@+id/titleTopRated"
+                        layout="@layout/layout_title_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerPopular"
+                        app:title="@{@string/top_rated}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerTopRated"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleTopRated" />
+
+                    <include
+                        android:id="@+id/titleUpcoming"
+                        layout="@layout/layout_title_home"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_16"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerTopRated"
+                        app:title="@{@string/upcoming}" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerUpcoming"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_18"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/dp_16"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/titleUpcoming" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

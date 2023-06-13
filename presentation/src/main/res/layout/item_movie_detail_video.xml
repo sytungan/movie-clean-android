@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.moviedatabase.model.MovieVideoResultItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardMovieImage"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_120"
+        android:layout_marginEnd="@dimen/dp_20"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:cardElevation="@dimen/dp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageMovie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{item.youtubeThumbnail}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/buttonPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            app:srcCompat="@drawable/ic_play_white" />
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

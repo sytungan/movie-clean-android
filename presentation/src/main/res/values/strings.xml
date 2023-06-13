@@ -1,0 +1,40 @@
+<resources>
+    <!-- Common -->
+    <string name="app_name">Movie Database</string>
+    <string name="ok">OK</string>
+
+    <!-- Error message -->
+    <string name="unexpected_error">Network connection failed. Please try again</string>
+    <string name="http_unavailable_error">The server is under maintenance, please visit again later.</string>
+    <string name="http_forbidden_error">Access is not allowed</string>
+    <string name="no_internet_error">Please check internet connection and try again</string>
+    <string name="error">Error</string>
+    <string name="rx_mapper_error">An error occurred, please try again later</string>
+
+    <string name="contributor">Contributor</string>
+    <string name="search_hint">Input to search</string>
+    <string name="search_btn_title">Search</string>
+
+    <!--Home screen-->
+    <string name="recommendations">RECOMMENDATIONS</string>
+    <string name="category">CATEGORY</string>
+    <string name="popular">POPULAR</string>
+    <string name="top_rated">TOP RATED</string>
+    <string name="upcoming">UPCOMING</string>
+
+    <!-- Movie detail -->
+    <string name="your_rate">Your Rate</string>
+    <string name="series_cast">Series Cast</string>
+    <string name="video">Video</string>
+    <string name="comments">Comments</string>
+    <string name="recommendations_detail">Recommendations</string>
+
+    <!-- Information -->
+    <string name="read_more">Read more</string>
+    <string name="read_less">Read less</string>
+    <string name="favorite">Favorite</string>
+
+    <!-- Your rate -->
+    <string name="write_a_comment">Write a comment</string>
+    <string name="rating_format">%.1f</string>
+</resources>

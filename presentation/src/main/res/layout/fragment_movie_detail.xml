@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.moviedatabase.ui.moviedetail.MovieDetailViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_movie_detail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/layoutInformation"
+                layout="@layout/layout_movie_detail_information"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewModel="@{viewModel}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textYourRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/your_rate"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutInformation" />
+
+            <include
+                android:id="@+id/layoutYourRate"
+                layout="@layout/layout_movie_detail_your_rate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textYourRate"
+                app:viewModel="@{viewModel}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textSeriesCast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/series_cast"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutYourRate" />
+
+            <include
+                android:id="@+id/layoutSeriesCast"
+                layout="@layout/layout_movie_detail_series_cast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textSeriesCast"
+                app:viewModel="@{viewModel}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textVideo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/video"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutSeriesCast" />
+
+            <include
+                android:id="@+id/layoutVideo"
+                layout="@layout/layout_movie_detail_video"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textVideo"
+                app:viewModel="@{viewModel}" />
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textComments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/comments"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                android:visibility="@{viewModel.movieCommentsItem.size() >0 ? View.VISIBLE :View.GONE}"
+                app:layout_constraintEnd_toStartOf="@id/buttonComments"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutVideo" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_arrow_blue"
+                android:text="@string/comments"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                android:visibility="@{viewModel.movieCommentsItem.size() >0 ? View.VISIBLE :View.GONE}"
+                app:layout_constraintBottom_toBottomOf="@id/textComments"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textComments"
+                app:layout_constraintTop_toTopOf="@id/textComments" />
+
+            <include
+                android:id="@+id/layoutComments"
+                layout="@layout/layout_movie_detail_comments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:visibility="@{viewModel.movieCommentsItem.size() >0 ? View.VISIBLE :View.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textComments"
+                app:viewModel="@{viewModel}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/textRecommendations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_12"
+                android:text="@string/recommendations_detail"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/buttonRecommendations"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutComments" />
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/buttonRecommendations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_arrow_blue"
+                android:text="@string/comments"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/textRecommendations"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textRecommendations"
+                app:layout_constraintTop_toTopOf="@id/textRecommendations" />
+
+            <include
+                android:id="@+id/layoutRecommendations"
+                layout="@layout/layout_movie_detail_recommendations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_32"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonRecommendations"
+                app:viewModel="@{viewModel}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
