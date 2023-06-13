@@ -27,29 +27,29 @@ This example follows the principles of Clean Architecture for developing the pro
 ![Work Flow](images/work-flow.png "Work flow")
 
 ## Libraries Used
-- **Foundation**: Provides components for core system capabilities, Kotlin extensions, multidex support, and automated testing.
-  - **AppCompat**: Ensures graceful degradation on older Android versions.
-  - **Android KTX**: Enables writing more concise and idiomatic Kotlin code.
-  - **Test**: Offers an Android testing framework for unit and runtime UI tests.
-- **Architecture**: Offers a collection of libraries for designing robust, testable, and maintainable apps. It includes classes for managing UI component lifecycle and handling data persistence.
-  - **Data Binding**: Allows declarative binding of observable data to UI elements.
-  - **Lifecycles**: Facilitates creating a UI that automatically responds to lifecycle events.
-  - **LiveData**: Enables building data objects that notify views when the underlying database changes.
-  - **Navigation**: Handles all aspects of in-app navigation.
-  - **Room**: Provides access to the app's SQLite database with in-app objects and compile-time checks.
-  - **ViewModel**: Stores UI-related data that persists during app rotations. It also simplifies scheduling asynchronous tasks for optimal execution.
-  - **WorkManager**: Manages background jobs in Android.
-- **UI**: Provides details on using UI components in apps, either together or separately.
-  - **Animations & Transitions**: Allows moving widgets and transitioning between screens.
-  - **Fragment**: Represents a basic unit of composable UI.
-  - **Layout**: Facilitates widget arrangement using different algorithms.
+- [**Foundation**][0] : Provides components for core system capabilities, Kotlin extensions, multidex support, and automated testing.
+  - [**AppCompat**][1]: Ensures graceful degradation on older Android versions.
+  - [**Android KTX**][2] Enables writing more concise and idiomatic Kotlin code.
+  - [**Test**][4]: Offers an Android testing framework for unit and runtime UI tests.
+- [**Architecture**][10]: Offers a collection of libraries for designing robust, testable, and maintainable apps. It includes classes for managing UI component lifecycle and handling data persistence.
+  - [**Data Binding**][11]: Allows declarative binding of observable data to UI elements.
+  - [**Lifecycle**][12]: Facilitates creating a UI that automatically responds to lifecycle events.
+  - [**LiveData**][13]: Enables building data objects that notify views when the underlying database changes.
+  - [**Navigation**][14]: Handles all aspects of in-app navigation.
+  - [**Room**][16]: Provides access to the app's SQLite database with in-app objects and compile-time checks.
+  - [**ViewModel**][17]: Stores UI-related data that persists during app rotations. It also simplifies scheduling asynchronous tasks for optimal execution.
+  - [**WorkManager**][18]: Manages background jobs in Android.
+- [**UI**][30]: Provides details on using UI components in apps, either together or separately.
+  - [**Animations & Transitions**][31]: Allows moving widgets and transitioning between screens.
+  - [**Fragment**][34]: Represents a basic unit of composable UI.
+  - [**Layout**][35]: Facilitates widget arrangement using different algorithms.
 - **Third-party libraries**
-  - **Glide**: Used for image loading.
-  - **Kotlin Coroutines**: Manages background threads with simplified code and reduces the need for callbacks.
-  - **Hilt**: Enables dependency injection.
-  - **Retrofit**: Provides a type-safe HTTP client for Android.
-  - **EasyPermission**: A wrapper library that simplifies basic system permission logic when targeting Android M or higher.
-  - **CircleImageView**: A fast circular ImageView, perfect for profile images.
+  - [**Glide**][90]: Used for image loading.
+  - [**Kotlin Coroutines**][91]: Manages background threads with simplified code and reduces the need for callbacks.
+  - [**Hilt**][93]: Enables dependency injection.
+  - [**Retrofit**][94]: Provides a type-safe HTTP client for Android.
+  - [**EasyPermission**][95]: A wrapper library that simplifies basic system permission logic when targeting Android M or higher.
+  - [**CircleImageView**][96]: A fast circular ImageView, perfect for profile images.
 
 
 
