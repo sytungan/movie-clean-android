@@ -14,7 +14,7 @@ The user interface consists of two main screens: the Home screen and the Movie D
 ![Movie detail screen](images/movie_details.png "Movie detail screen")
 
 ## Building the Application
-- Clone the project from the following repository: [https://github.com/hungan1409/TheMovieDirectory.git](https://github.com/sytungan/movie-clean-android/.git)
+- Clone the project from the following repository: [https://github.com/sytungan/movie-clean-android.git](https://github.com/sytungan/movie-clean-android.git)
 - Use Android Framework version 3.5.x or greater for compilation and execution.
 
 ## Architecture
